@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "https://laspeed-amazon.herokuapp.com",
+  "proxy": "https://laspeed-amazon.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
