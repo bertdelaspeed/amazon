@@ -15,7 +15,7 @@ import json
 import requests
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
-
+from decouple import config
 
 
 @api_view(['POST'])
@@ -143,7 +143,7 @@ def getPaymentDetails(request):
     print('cmd id value :', details['command_id'])
     print('price id value :', details['price'])
 
-    headers = {"Content-Type": "application/json","Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIwMDAxLjAwMDYuODY4In0.aWIEppGR5Vye-UwJ-jQr12f7KQNIsoVE1rvTMPgpUuo"}
+    headers = {"Content-Type": "application/json","Authorization": config('TOKEN')}
     url = "https://apps.lagfo.com/v1/send/data/"
     payload = {"payment_data":{
         "command_id":details['command_id'],
